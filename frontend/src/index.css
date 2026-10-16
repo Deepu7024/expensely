@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background-color: #09090b;
+    overflow-x: hidden;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    background-color: #09090b;
+    color: #e4e4e7;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  /* Native select popovers do not consistently inherit `color-scheme`
+     from the page (notably on WebKit). Give every option an explicit
+     dark surface so light option text never lands on a white menu. */
+  select option,
+  select optgroup {
+    background-color: #18181b;
+    color: #f4f4f5;
+  }
+}
+
+@layer utilities {
+  .transaction-filters input {
+    box-sizing: border-box;
+    min-inline-size: 0;
+    inline-size: 100%;
+    min-height: 44px;
+  }
+  .transaction-filters input[type='date'] {
+    -webkit-appearance: none;
+    appearance: none;
+    padding-inline: 8px;
+  }
+  .transaction-filters input[type='date']::-webkit-date-and-time-value {
+    min-width: 0;
+    text-align: left;
+  }
+  .transaction-filters input[type='date']::-webkit-datetime-edit {
+    min-width: 0;
+    padding: 0;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .skeleton {
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.04) 0px,
+      rgba(255, 255, 255, 0.09) 40px,
+      rgba(255, 255, 255, 0.04) 80px
+    );
+    background-size: 800px 100%;
+  }
+}

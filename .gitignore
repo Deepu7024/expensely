@@ -1,0 +1,50 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# --- frontend (Create React App) ---
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.js
+frontend/coverage
+frontend/build
+frontend/dist
+*.tsbuildinfo
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- backend (FastAPI) ---
+backend/.venv
+backend/.venv*
+backend/venv
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.pytest_cache/
+backend/.coverage
+backend/*.db
+backend/*.db-*
+backend/*.sqlite*
+backend/.env
+!backend/.env.example
+backend/credentials*.json
+backend/token.json
+backend/token.json.*
+# Google's default download name for OAuth client secrets — catch it
+# anywhere under backend/ in case it lands somewhere other than
+# backend/credentials.json before being renamed.
+backend/**/client_secret_*.json
+
+# --- misc ---
+.venv*/
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.key
+.DS_Store
+.idea/
+**/.idea/
+output/
